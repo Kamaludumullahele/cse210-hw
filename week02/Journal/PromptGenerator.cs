@@ -1,8 +1,8 @@
 using System;
-using System.Runtime.CompilerServices;  
-namespace Journal
-{
+using System.Collections.Generic;
 
+namespace JournalApp
+{
     public class PromptGenerator
     {
         // Attributes of 

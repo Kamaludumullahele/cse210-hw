@@ -14,14 +14,11 @@ namespace JournalApp
         "If I had one thing I could do over today, what would it be?",
         "Did I make my good deed today?",
     };
-
         private Random _random = new Random();
-
         public string GetRandomPrompt()
         {
             int index = _random.Next(_prompts.Count);
             return _prompts[index];
-
         }
     }
 }

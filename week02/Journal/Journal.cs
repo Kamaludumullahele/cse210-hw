@@ -23,7 +23,6 @@ public class Journal
             return;
         }
 
-
         foreach (Entry entry in _entries)
         {
             entry.Display();

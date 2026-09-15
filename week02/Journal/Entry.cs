@@ -11,7 +11,6 @@ public class Entry
         _promptText = prompt;
         _entryText = entryText;
     }
-
     public void Display()
     {
         Console.WriteLine($"Date: {_date}");

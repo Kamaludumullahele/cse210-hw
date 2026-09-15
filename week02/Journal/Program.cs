@@ -29,6 +29,7 @@ public class Program
                     Console.WriteLine(prompt);
                     Console.WriteLine("Enter your response:");
                     string response = Console.ReadLine();
+                    // For creativity I have added DateTime to track when the entry was made.
                     Entry entry = new Entry(DateTime.Now, prompt, response);
                     journal.addEntry(entry);
                     break;

@@ -4,21 +4,16 @@ using System.IO;
 
 public class Journal
 {
-    private List<Entry> _entries = new List<Entry>();
+    private List<Entry> _entries;
 
     public Journal()
     {
         _entries = new List<Entry>();
     }
 
-    public Journal(List<Entry> entries)
+    public void addEntry(Entry newEntry)
     {
-        _entries = entries;
-    }
-
-    public void AddEntry(Entry entry)
-    {
-        _entries.Add(entry);
+        _entries.Add(newEntry);
     }
 
     public void DisplayAll()
@@ -32,7 +27,7 @@ public class Journal
 
         foreach (Entry entry in _entries)
         {
-            entry.DisplayEntry();
+            entry.Display();
         }
         Console.WriteLine("All journal entries displayed.");
 
@@ -43,7 +38,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                writer.WriteLine(entry.ToString());
+                writer.WriteLine(entry.ToFileString());
             }
         }
     }
@@ -61,7 +56,6 @@ public class Journal
         {
             Entry entry = Entry.FromFileString(line);
             _entries.Add(entry);
-            entry.DisplayEntry();
         }
         Console.WriteLine("Journal loaded successfully.");
     }

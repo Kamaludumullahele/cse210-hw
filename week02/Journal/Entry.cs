@@ -1,7 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-
 public class Entry
 {
     public string _date = DateTime.Now.ToShortDateString();
@@ -33,7 +30,7 @@ public class Entry
     {
         string[] parts = fileString.Split('|');
         DateTime date = DateTime.Parse(parts[0]);
-        string promptText   = parts[1];
+        string promptText = parts[1];
         string entryText = parts[2];
         return new Entry(date, promptText, entryText);
     }

@@ -1,0 +1,4 @@
+{
+    "dotnet.server.path": "/usr/local/share/dotnet/dotnet",
+    "omnisharp.dotnetPath": "/usr/local/share/dotnet/dotnet"
+}

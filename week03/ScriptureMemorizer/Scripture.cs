@@ -20,7 +20,12 @@ public class Scripture
         Random random = new Random();
         for (int index = 0; index < numberToHide && _words.Count > 0; index++)
         {
-            _words[random.Next(_words.Count)].Hide();
+            Word wordToHide;
+            do
+            {
+                wordToHide = _words[random.Next(_words.Count)];
+            } while (wordToHide.IsHidden());
+            wordToHide.Hide();
         }
     }
 

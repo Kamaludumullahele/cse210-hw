@@ -1,5 +1,5 @@
 public class Word
-{
+{ // Class representing a single word in the scripture, which can be hidden or shown
 	private string _text;
 	private bool _isHidden;
 

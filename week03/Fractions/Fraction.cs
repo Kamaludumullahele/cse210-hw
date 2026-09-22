@@ -32,10 +32,12 @@ public class Fraction
     {
         return _bottom;
     }
+
     public void SetTop(int top)
     {
         _top = top;
     }
+    
     public void SetBottom(int bottom)
     {
         _bottom = bottom;

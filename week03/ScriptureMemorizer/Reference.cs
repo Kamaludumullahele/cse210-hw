@@ -36,7 +36,4 @@ public class Reference
             return $"{_book} {_chapter} {_verse}";
         }
     }
-
-
-
 }

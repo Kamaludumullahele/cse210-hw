@@ -10,12 +10,12 @@ public class Word
 
 	public void Hide()
 	{
-		_hide = false;
+		_isHidden = true;
 	}
 
     public void Show()
     {
-        _show = true;
+        _isHidden = false;
     }
 
     public bool IsHidden()

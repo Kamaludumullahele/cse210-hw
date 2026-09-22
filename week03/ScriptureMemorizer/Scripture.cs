@@ -26,6 +26,11 @@ public class Scripture
 
     public string GetDisplayText()
     {
-        return $"{_reference.GetDisplayText()} {string.Join(" ", _words)}";
+        return $"{_reference.GetDisplayText()} {string.Join(" ", _words.Select(word => word.GetDisplayText()))}";
+    }
+
+    public bool IsCompletelyHidden()
+    {
+        return _words.All(word => word.IsHidden());
     }
 }

@@ -18,14 +18,14 @@ public class Scripture
     public void HideRandomWords (int numberToHide)
     {
         Random random = new Random();
-        for (int index = 0; index < numberToHide && _words.Count > 0; index++)
+        List<Word> visibleWords = _words.Where(word => !word.IsHidden()).ToList();
+
+        for (int index = 0; index < numberToHide && visibleWords.Count > 0; index++)
         {
-            Word wordToHide;
-            do
-            {
-                wordToHide = _words[random.Next(_words.Count)];
-            } while (wordToHide.IsHidden());
+            int wordIndex = random.Next(visibleWords.Count);
+            Word wordToHide = visibleWords[wordIndex];
             wordToHide.Hide();
+            visibleWords.RemoveAt(wordIndex);
         }
     }
 

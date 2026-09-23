@@ -19,7 +19,7 @@ public class Scripture
     public void HideRandomWords (int numberToHide)
     {
         Random random = new Random();
-        List<Word> visibleWords = _words.Where(word => !word.IsHidden()).ToList();
+        List<Word> visibleWords = _words.FindAll(word => !word.IsHidden()).ToList();
 
         for (int index = 0; index < numberToHide && visibleWords.Count > 0; index++)
         {

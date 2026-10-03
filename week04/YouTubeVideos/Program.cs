@@ -25,7 +25,6 @@ public class YouTubeVideos
         video1.AddComment(comment1);
         video1.AddComment(comment2);
         video1.AddComment(comment3);
-
         // add comments to video2
         video2.AddComment(comment4);
         video2.AddComment(comment5);

@@ -13,25 +13,28 @@ namespace Mindfulness
             _name = name;
             _duration = duration;
             _description = description;
+            Console.WriteLine($"Initialized {_name} activity with duration {_duration} minutes.");
+
         }
 
         public void DisplayStartingMessage()
         {
-            // Display the starting message goes here
+            Console.WriteLine($"Starting {_name} activity for {_duration} minutes.");
+            Console.WriteLine(_description);
         }
 
         public void DisplayEndingMessage()
         {
-            // Display the ending message goes here
+            Console.WriteLine($"Ending {_name} activity. You spent {_duration} minutes on this activity.");
         }
         public void ShowSpinner(int durationSeconds)
         {
-            // Display the spinner animation goes here
+            Console.WriteLine("Showing spinner animation for " + durationSeconds + " seconds.");
         }
 
         public void ShowCountdown(int durationSeconds)
         {
-            // Display the countdown animation goes here
+            Console.WriteLine("Showing countdown animation for " + durationSeconds + " seconds.");
         }
     }
 }

@@ -1,40 +1,67 @@
 using System;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Mindfulness
 {
     class Activity
-    {
-        private string _name;
-        private int _duration;
-        private string _description;
+    { // Base class for mindfulness activities
+        protected string _name;
+        protected string _description;
+        protected int _duration;
 
-        public Activity(string name, int duration, string description)
+        // Constructor for the base activity class
+        public Activity(string name, string description)
         {
             _name = name;
-            _duration = duration;
             _description = description;
-            Console.WriteLine($"Initialized {_name} activity with duration {_duration} minutes.");
+            _duration = 0;
 
         }
-
+        // Method to display the starting message and prompt for duration
         public void DisplayStartingMessage()
         {
-            Console.WriteLine($"Starting {_name} activity for {_duration} minutes.");
+            Console.WriteLine($"Welcome to the {_name} activity!\n");
             Console.WriteLine(_description);
+            Console.WriteLine("\nHow long would you like to spend on this activity in seconds?");
+            string input = Console.ReadLine();
+            _duration = int.Parse(input);
         }
-
+        // Method to display the ending message
         public void DisplayEndingMessage()
         {
-            Console.WriteLine($"Ending {_name} activity. You spent {_duration} minutes on this activity.");
+            Console.WriteLine("Well done!");
+            Thread.Sleep(3000); // Pause for a moment before displaying the ending message
+            Console.WriteLine($"Ending {_name} activity. You spent {_duration} seconds on this activity.");
         }
+
+        // Method to show a spinner animation for a specified duration
         public void ShowSpinner(int durationSeconds)
         {
-            Console.WriteLine("Showing spinner animation for " + durationSeconds + " seconds.");
+            char[] spinner = { '|', '/', '-', '\\' };
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            int spinnerIndex = 0;
+
+            while (stopwatch.Elapsed.TotalSeconds < durationSeconds)
+            {
+                Console.Write($"\b{spinner[spinnerIndex]}");
+                // Move to the next spinner character
+                spinnerIndex = (spinnerIndex + 1) % spinner.Length;
+                Thread.Sleep(100);
+            }
+
+            Console.Write("\b \b");
+
         }
 
         public void ShowCountdown(int durationSeconds)
         {
-            Console.WriteLine("Showing countdown animation for " + durationSeconds + " seconds.");
+            for (int i = durationSeconds; i > 0; i--)
+            {
+                Console.Write(i);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
         }
     }
 }

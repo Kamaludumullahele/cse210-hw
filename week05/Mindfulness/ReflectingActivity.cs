@@ -40,7 +40,10 @@ namespace Mindfulness
         {
             DisplayStartingMessage();
             Console.WriteLine("\nConsider this prompt:");
+            Thread.Sleep(1000); // Pause for a moment before displaying the prompt
             DisplayPrompt();
+            ShowCountdown(5);
+
 
             System.Diagnostics.Stopwatch stopwatch = System.Diagnostics.Stopwatch.StartNew();
             while (stopwatch.Elapsed.TotalSeconds < _duration)

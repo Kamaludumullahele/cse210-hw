@@ -1,12 +1,12 @@
 using System;
 namespace EternalQuest
-{
+{   // For Creativity 
     public class NegativeGoal : Goal
     {
         private bool _isComplete;
-        private readonly string _name;
-        private readonly string _description;
-        private readonly int _points;
+        private  string _name;
+        private  string _description;
+        private  int _points;
 
         public NegativeGoal(string name, string description, int points)
             : base(name, description, points)

@@ -1,4 +1,4 @@
-150
-SimpleGoal|Prayer|Praying for my mother's health|50|True
-ChecklistGoal|Baptism by proxy|Doing baptism for others who in he other side of the vail|100|1|3|500
-EternalGoal|Reading Scriptures|Scriputure study daily |50
+0
+SimpleGoal|Prayer|Praying for my daughter's health|100|False
+ChecklistGoal|Temple visit|Visiting temple for baptism by proxy|100|0|3|500
+NegativeGoal|Smoking|Smoking cigerrettes|50

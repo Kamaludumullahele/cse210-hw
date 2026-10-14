@@ -4,6 +4,23 @@ namespace EternalQuest
 {
     public class EternalGoal : Goal
     {
-        // Properties and methods for the EternalGoal class will go here
+        public EternalGoal(string shortName, string description, int points) : base(shortName, description, points)
+        {
+            return;
+        }
+        public override void RecordEvent()
+        {
+            base.RecordEvent(); // Eternal goals are never complete, so recording an event doesn't change their state
+        }
+
+        public override bool IsComplete()
+        {
+            return false;
+        }
+
+        public override string GetStringRepresentation()
+        {
+            return $"EternalGoal: Always incomplete";
+        }
     }
 }

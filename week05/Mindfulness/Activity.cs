@@ -6,8 +6,8 @@ namespace Mindfulness
 {
     class Activity
     { // Base class for mindfulness activities
-        protected string _name;
-        protected string _description;
+        private string _name;
+        private string _description;
         protected int _duration;
 
         // Constructor for the base activity class

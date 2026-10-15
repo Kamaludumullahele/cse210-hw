@@ -2,15 +2,15 @@
 // Creativity for Extra Credits:
 using System;
 namespace EternalQuest
-{   
+{
     // Class representing a negative goal in the EternalQuest game
     public class NegativeGoal : Goal
     {
         private bool _isComplete;
-        private  string _name;
-        private  string _description;
-        private  int _points;
-    // Constructor for the NegativeGoal class
+        private string _name;
+        private string _description;
+        private int _points;
+        // Constructor for the NegativeGoal class
         public NegativeGoal(string name, string description, int points)
             : base(name, description, points)
         {

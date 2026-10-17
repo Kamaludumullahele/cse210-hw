@@ -28,12 +28,12 @@ namespace EternalQuest
         // Method to get the details of the checklist goal as a string
         public override string GetDetailString()
         {
-            return $"The Goal: {GetName()} - {_amountCompleted}/{_target} completed; bonus: {_bonus}";
+            return $"{base.GetDetailString()} -- Currently completed: {_amountCompleted}/{_target}";
         }
         // Method to get the string representation of the checklist goal
         public override string GetStringRepresentation()
         {
-            return $"ChecklistGoal: AmountCompleted = {_amountCompleted}, Target = {_target}, Bonus = {_bonus}";
+            return $"ChecklistGoal|{GetName()}|{GetDescription()}|{GetPoints()}|{_amountCompleted}|{_target}|{_bonus}";
         }
         // Method to get the bonus points of the checklist goal
         public int GetBonus()

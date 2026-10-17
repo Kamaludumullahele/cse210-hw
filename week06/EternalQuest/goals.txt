@@ -1,4 +1,8 @@
-0
-SimpleGoal|Prayer|Praying for my daughter's health|100|False
+200
+SimpleGoal|Prayer|Praying for my daughter's health|100|True
 ChecklistGoal|Temple visit|Visiting temple for baptism by proxy|100|0|3|500
 NegativeGoal|Smoking|Smoking cigerrettes|50
+SimpleGoal|Giving a |Giving a talk at the secrement meeting|100|True
+ChecklistGoal|Going to the Temple|Going to temple and performing ordinances|50|0|3|100
+EternalGoal|Reading sciptures every day|Reading scritures morning and at bedtime|50
+NegativeGoal|Stop smoking|stop smoking e-cigerrets|50

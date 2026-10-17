@@ -65,9 +65,9 @@ namespace EternalQuest
         public void ListGoalNames()
         {
             Console.WriteLine("Goal Names:");
-            foreach (var goal in _goals)
+            for (int i = 0; i < _goals.Count; i++)
             {
-                Console.WriteLine(goal.GetDetailString());
+                Console.WriteLine($"{i + 1}. {_goals[i].GetName()}");
             }
         }
         public void ListGoalDetails()
@@ -173,6 +173,8 @@ namespace EternalQuest
                 return;
             }
 
+            goal.RecordEvent();
+
             if (goal is NegativeGoal)
             {
                 _score -= goal.GetPoints();
@@ -195,26 +197,7 @@ namespace EternalQuest
 
             foreach (Goal goal in _goals)
             {
-                if (goal is SimpleGoal simple)
-                {
-                    writer.WriteLine(
-                        $"SimpleGoal|{goal.GetName()}|{goal.GetDescription()}|{goal.GetPoints()}|{simple.IsComplete()}");
-                }
-                else if (goal is ChecklistGoal checklist)
-                {
-                    writer.WriteLine(
-                        $"ChecklistGoal|{goal.GetName()}|{goal.GetDescription()}|{goal.GetPoints()}|{checklist.GetAmountCompleted()}|{checklist.GetTarget()}|{checklist.GetBonus()}");
-                }
-                else if (goal is EternalGoal eternal)
-                {
-                    writer.WriteLine(
-                        $"EternalGoal|{goal.GetName()}|{goal.GetDescription()}|{goal.GetPoints()}");
-                }
-                else if (goal is NegativeGoal)
-                {
-                    writer.WriteLine(
-                        $"NegativeGoal|{goal.GetName()}|{goal.GetDescription()}|{goal.GetPoints()}");
-                }
+                writer.WriteLine(goal.GetStringRepresentation());
             }
 
             Console.WriteLine("Goals saved to goals.txt.");
